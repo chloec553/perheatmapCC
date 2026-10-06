@@ -1,31 +1,12 @@
 """
 Penn Electric Racing - sponsorship correlation heatmap (Seaborn).
 
-Built on the example `plot_correlation_heatmap` from the project (Titanic example).
-Like `pclass` there, each question gets ONE column:
-
-    Company size              1 local business, 2 mid-size brand, 3 corporate
-    Warmth of first contact   0 cold email, 1 referral / event / LinkedIn, 2 they contacted us
-
-Variables are ordered the way a deal happens - company -> outreach -> result - so the
-lower triangle reads left to right. Pairs that are true by definition (e.g. Tier: Local vs
-Tier: Corporate, or Closed vs Deal value, which only exists for closed deals) are shown as
-"n/a" instead of a misleading number.
-
-Views
------
-    overview   every step against every other, lower triangle (like the Titanic example)
-    breakdown  results (rows) vs each tier and channel option as its own yes/no column
-
 Run
 ---
-    python3 correlation_heatmap.py                              # interactive window
+    python3 correlation_heatmap.py
     python3 correlation_heatmap.py --static --save overview.png
     python3 correlation_heatmap.py --static --view breakdown --save breakdown.png
     python3 correlation_heatmap.py --csv path/to/PER_sponsorship_dataset.csv
-
-Existing sponsors are excluded by default (their relationship pre-dates the emails, so they
-always count as closed). Add --include-existing to keep them.
 
 Requires: pandas, numpy, seaborn, matplotlib   (pip install pandas seaborn matplotlib)
 """
